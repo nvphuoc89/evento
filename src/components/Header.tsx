@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 const rotues = [
   { name: "Home", path: "/" },
@@ -13,7 +13,6 @@ const rotues = [
 
 export default function Header() {
   const activePathName = usePathname();
-
   console.log(activePathName);
 
   return (
@@ -25,7 +24,7 @@ export default function Header() {
           {rotues.map((route) => (
             <li
               key={route.path}
-              className={clsx(
+              className={cn(
                 "flex items-center hover:text-white transition relative",
                 {
                   "text-white": activePathName === route.path,

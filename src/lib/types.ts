@@ -4,7 +4,7 @@ export type EventoEvent = {
   slug: string;
   city: string;
   location: string;
-  date: Date;
+  date: string;
   organizerName: string;
   imageUrl: string;
   description: string;

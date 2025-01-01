@@ -1,4 +1,5 @@
 import H1 from "@/components/H1";
+import { sleep } from "@/lib/utils";
 import Image from "next/image";
 
 type EventPageProps = {
@@ -8,6 +9,7 @@ type EventPageProps = {
 };
 
 export default async function EventPage({ params }: EventPageProps) {
+  await sleep(3000);
   const { slug } = params;
   const response = await fetch(
     `https://bytegrad.com/course-assets/projects/evento/api/events/${slug}`
@@ -16,7 +18,7 @@ export default async function EventPage({ params }: EventPageProps) {
   return (
     <main>
       <section
-        className="relative  overflow-hidden 
+        className="relative overflow-hidden 
       flex items-center justify-center py-14 md:py-20"
       >
         <Image
